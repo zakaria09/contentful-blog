@@ -9,7 +9,6 @@ const getPosts = async () => {
 
 const Posts = async () => {
   const posts = await getPosts();
-  console.log(posts);
 
   return (
     <section className='section'>
