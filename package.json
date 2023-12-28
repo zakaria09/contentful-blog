@@ -9,12 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.19.0",
+    "axois": "^0.0.1-security",
     "contentful": "^10.6.7",
+    "install": "^0.13.0",
     "next": "14.0.2",
+    "npm": "^10.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

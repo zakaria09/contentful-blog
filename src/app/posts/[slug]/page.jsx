@@ -1,24 +1,35 @@
-import {useRouter} from 'next/router';
-import PostHeader from '@/app/components/posts/PostHeader';
-import PostBody from '@/app/components/posts/PostBody';
-import { client } from '../lib/contentful/client';
+"use client";
+import { usePathname } from "next/navigation";
+import PostHeader from "@/app/components/posts/PostHeader";
+import PostBody from "@/app/components/posts/PostBody";
+import useSWR from 'swr'
+import axios from "axios";
 
-const getPosts = async (slug) => {
-  const res = await client.getEntries({content_type: 'post', 'fields.slug': slug});
-  return res;
-};
+const fetcher = (url) => axios.get(url).then(res => {
+  return res.data
+})
 
 const Post = () => {
-  const router = useRouter();
-  console.log(router)
+  const pathname = usePathname();
+  const paths = pathname.split("/");
+  const slug = paths[paths.length - 1]
+  const { data, error, isLoading } = useSWR(`/api?slug=${slug}`, fetcher);
+
+  console.log(data)
+
+  if (isLoading) return <p>Loading...</p>
 
   return (
-    <section className='section'>
-      <div className='container'>
-        <article className='prose mx-auto'>
+    <section className="section">
+      <div className="container">
+        <article className="prose mx-auto">
           <h1>Post</h1>
-          {/* <PostHeader post={post} />
-          <PostBody post={post} /> */}
+          {data.items.map((post) => (
+            <div key={post.sys.id}>
+              <PostHeader post={post} />
+              <PostBody post={post} />
+            </div>
+          ))}
         </article>
       </div>
     </section>
