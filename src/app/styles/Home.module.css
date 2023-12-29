@@ -1,0 +1,13 @@
+
+.bg_image {
+  background: 
+    url(../../../public//a13dcaee-a20a-4b77-88cd-12fa5f56880d.JPG) no-repeat center center fixed;
+  min-height: calc(100vh - 88px);
+  width: 100%;
+  z-index: 0;
+}
+
+.legend {
+  background: rgba(18, 18, 18, 0.4);
+  border-radius: 3rem;
+}

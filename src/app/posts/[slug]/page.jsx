@@ -15,15 +15,12 @@ const Post = () => {
   const slug = paths[paths.length - 1]
   const { data, error, isLoading } = useSWR(`/api?slug=${slug}`, fetcher);
 
-  console.log(data)
-
   if (isLoading) return <p>Loading...</p>
 
   return (
-    <section className="section">
+    <section>
       <div className="container">
         <article className="prose mx-auto">
-          <h1>Post</h1>
           {data.items.map((post) => (
             <div key={post.sys.id}>
               <PostHeader post={post} />
