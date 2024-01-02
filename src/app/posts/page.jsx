@@ -1,6 +1,8 @@
 import React from "react";
 import { client } from "@/app/lib/contentful/client";
 import PostCard from "../components/posts/PostCard";
+import sectionImage from "../components/ui/sectionImage";
+import image2 from "../../../public/IMG_7529.JPG";
 
 const getPosts = async () => {
   return await client.getEntries({ content_type: "post" });
@@ -18,6 +20,7 @@ const Posts = async () => {
           ))}
         </ul>
       </div>
+      <sectionImage img={image2} reverse={false} bgColor="" />
     </section>
   );
 };
