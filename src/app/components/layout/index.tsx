@@ -1,31 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
+import logo from '../../../../public/IMG_1554.JPG';
+import Image from 'next/image';
+import Navbar from '../ui/navbar';
 
 const Layout = ({children}: any): React.JSX.Element => {
   return (
     <>
-      <header className='bg-stone-100 p-8'>
-        <nav className='container'>
-          <ul className='flex gap-4'>
-            <li>
-              <Link
-                href='/'
-                className='text-sm font-medium uppercase text-stone-400'
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='/posts'
-                className='text-sm font-medium uppercase text-stone-400'
-              >
-                Posts
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Navbar />
 
       <main>{children}</main>
 

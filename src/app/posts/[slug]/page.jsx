@@ -1,21 +1,17 @@
-"use client";
-import { usePathname } from "next/navigation";
 import PostHeader from "@/app/components/posts/PostHeader";
 import PostBody from "@/app/components/posts/PostBody";
-import useSWR from 'swr'
-import axios from "axios";
 
-const fetcher = (url) => axios.get(url).then(res => {
-  return res.data
-})
+const getPost = async (slug) => {
+  const res = await fetch(`${process.env.API_PATH}/api?slug=${slug}`)
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+  return res.json()
+}
 
-const Post = () => {
-  const pathname = usePathname();
-  const paths = pathname.split("/");
-  const slug = paths[paths.length - 1]
-  const { data, error, isLoading } = useSWR(`/api?slug=${slug}`, fetcher);
-
-  if (isLoading) return <p>Loading...</p>
+const Post = async ({ params }) => {
+  const { slug } = params;
+  const data = await getPost(slug);
 
   return (
     <section>

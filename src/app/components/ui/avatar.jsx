@@ -1,3 +1,4 @@
+"use client"
 import ContentfulImage from './ContentfulImage'
 
 const Avatar = ({ name, picture }) => {

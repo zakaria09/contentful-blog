@@ -1,3 +1,4 @@
+"use client"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import Link from "next/link";
@@ -72,7 +73,7 @@ const options = {
           height={node.data.target.fields.file.details.image.height}
           width={node.data.target.fields.file.details.image.width}
           alt={node.data.target.fields.title}
-          className="h-20 w-20"
+          className="max-h-[26rem] object-cover"
         />
       );
     },

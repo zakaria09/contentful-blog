@@ -1,20 +1,17 @@
 import Image from 'next/image';
 import styles from './styles/Home.module.css';
 import image from '../../public/IMG_1554.JPG';
-import image2 from '../../public/Castlon-Man-Tor-Circular-8-scaled-1-1.webp';
-import Avatar from './components/ui/avatar';
-import ContentSection from './components/ui/contentSection';
+import image2 from '../../public/IMG_1495.jpg';
+import image3 from '../../public/IMG_7529.JPG';
+import Panel from './components/ui/panel';
 
 export default function Home() {
   return (
     <main>
       <div className={styles.bg_image}>
-        <div className='h-screen flex items-center justify-center z-50 text-white	'>
-          <div className={`p-24 inset-0 ${styles.legend}`}>
-            <div className='flex justify-between gap-5'>
-              <h1 className='block font-sans text-4xl md:text-5xl antialiased font-semibold leading-tight tracking-normal my-auto drop-shadow-md'>
-                Somali Hikers
-              </h1>
+        <div className='h-full z-20 text-white	'>
+          <div className={`sm:p-16 p-8 inset-0 ${styles.legend}`}>
+            <div className='flex gap-5'>
               <Image
                 src={image}
                 height={50}
@@ -27,6 +24,9 @@ export default function Home() {
                   borderRadius: '100%',
                 }}
               />
+              <h1 className=' text-3xl md:text-5xl antialiased font-bold leading-tight tracking-normal my-auto drop-shadow-lg'>
+                Somali Hikers
+              </h1>
             </div>
           </div>
         </div>
@@ -50,8 +50,40 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <ContentSection img={image2} reverse={false} bgColour='#dddddd' />
-      <ContentSection img={image2} reverse={true} bgColour='#ffffff' />
+      <section>
+        <div className='sm:px-8 md:pb-32'>
+          <div className='mx-auto w-full max-w-7xl lg:px-8'>
+            <div className='grid md:grid-cols-3 gap-2'>
+              <Panel
+                title='Guided Hikes'
+                content='Our Hikes are there are many variations of passages of Lorem
+                    Ipsum available, but the majority have suffered alteration
+                    in some form, by injected humour, or randomised words which
+                    dont look even slightly believable.'
+                icon='person-hiking'
+              />
+              <Panel
+                title='Guided Hikes'
+                content='Our Hikes are there are many variations of passages of Lorem
+                    Ipsum available, but the majority have suffered alteration
+                    in some form, by injected humour, or randomised words which
+                    dont look even slightly believable.'
+                icon='mountain'
+              />
+              <Panel
+                title='Connect with Nature'
+                content='Our Hikes are there are many variations of passages of Lorem
+                    Ipsum available, but the majority have suffered alteration
+                    in some form, by injected humour, or randomised words which
+                    dont look even slightly believable.'
+                icon='tree'
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <ContentSection img={image3} reverse={false} bgColour='#dddddd' />
+      <ContentSection img={image2} reverse={true} bgColour='#ffffff' /> */}
     </main>
   );
 }

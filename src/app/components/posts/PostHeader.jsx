@@ -7,6 +7,7 @@ const PostHeader = ({ post }) => {
 
   return (
     <>
+      <h2 className='leading-10 text-4xl tracking-wider	capitalize font-black	'>{title}</h2>
       <div className="mb-8 md:mb-16 sm:mx-0">
         <Image
           alt={`Cover Image for ${title}`}
@@ -16,7 +17,6 @@ const PostHeader = ({ post }) => {
           style={{ objectFit: "cover", maxHeight: "28rem" }}
         />
       </div>
-      <h2>{title}</h2>
       <div className="hidden md:flex md:justify-between md:items-center md:mb-10">
         <Avatar name={author.fields.name} picture={author.fields.avatar} />
         <p>{date}</p>
