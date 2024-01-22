@@ -10,9 +10,9 @@ const Posts = async () => {
   const posts = await getPosts();
 
   return (
-    <section className="section">
+    <section className="section py-12">
       <div className="container">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-10">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {posts.items.map((post) => (
             <PostCard key={post.fields.slug} post={post} />
           ))}
