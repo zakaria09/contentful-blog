@@ -1,7 +1,7 @@
 
 .bg_image {
   background: 
-    url(../../../public//a13dcaee-a20a-4b77-88cd-12fa5f56880d.JPG) no-repeat;
+    url(../../../public/bg.JPG) no-repeat;
   min-height: calc(100vh - 88px);
   background-size: cover;
   background-position: center;

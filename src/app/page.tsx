@@ -1,8 +1,5 @@
 import Image from 'next/image';
 import styles from './styles/Home.module.css';
-import image from '../../public/IMG_1554.JPG';
-import image2 from '../../public/IMG_1495.jpg';
-import image3 from '../../public/IMG_7529.JPG';
 import Panel from './components/ui/panel';
 import {client} from './lib/contentful/client';
 import { SocialIcon } from "react-social-icons/component";
@@ -10,6 +7,7 @@ import "react-social-icons/tiktok";
 import "react-social-icons/twitter";
 import "react-social-icons/linkedin";
 import "react-social-icons/instagram";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Somali Hiker',
@@ -32,7 +30,7 @@ export default async function Home() {
           <div className={`sm:p-16 p-8 inset-0 ${styles.legend}`}>
             <div className="flex gap-5">
               <Image
-                src={image}
+                src={"/logo.JPG"}
                 height={50}
                 width={50}
                 alt=""

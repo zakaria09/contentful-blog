@@ -1,7 +1,4 @@
-import Link from 'next/link';
 import React from 'react';
-import logo from '../../../../public/IMG_1554.JPG';
-import Image from 'next/image';
 import Navbar from '../ui/navbar';
 
 const Layout = ({children}: any): React.JSX.Element => {
