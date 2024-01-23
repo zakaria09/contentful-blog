@@ -2,7 +2,6 @@ import RichText from '../RichText'
 
 const PostBody = ({ post }) => {
   const { content } = post.fields
-  console.log(content)
 
   return (
     <div className='mx-auto prose'>

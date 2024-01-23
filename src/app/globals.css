@@ -27,3 +27,7 @@
     @apply font-bold tracking-tight;
   }
 }
+
+.active-link {
+  color: #D95E38;
+}
