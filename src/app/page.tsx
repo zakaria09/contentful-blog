@@ -6,6 +6,11 @@ import image3 from '../../public/IMG_7529.JPG';
 import Panel from './components/ui/panel';
 import {client} from './lib/contentful/client';
 
+export const metadata: Metadata = {
+  title: 'Somali Hiker',
+  description: 'Welcome to Somali Hikers',
+};
+
 const getServices = async () => {
   return await client.getEntries({content_type: 'services'});
 };
