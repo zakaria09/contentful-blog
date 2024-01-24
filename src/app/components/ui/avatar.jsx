@@ -1,5 +1,5 @@
 "use client"
-import ContentfulImage from '@app/ContentfulImage'
+import ContentfulImage from './contentfulImage'
 
 const Avatar = ({ name, picture }) => {
   return (

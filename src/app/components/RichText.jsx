@@ -2,7 +2,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import Link from "next/link";
-import ContentfulImage from "@/app/ui/ContentfulImage";
+import ContentfulImage from './ui/contentfulImage';
 
 const options = {
   renderMark: {
