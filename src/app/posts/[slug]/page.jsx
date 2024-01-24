@@ -1,5 +1,6 @@
 import PostHeader from "@/app/components/posts/PostHeader";
 import PostBody from "@/app/components/posts/PostBody";
+import { client } from "@/app/lib/contentful/client";
 
 const getPost = async (slug) => {
   const res = await client.getEntries({
