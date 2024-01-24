@@ -2,11 +2,11 @@ import PostHeader from "@/app/components/posts/PostHeader";
 import PostBody from "@/app/components/posts/PostBody";
 
 const getPost = async (slug) => {
-  const res = await fetch(`${process.env.API_PATH}/api?slug=${slug}`)
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-  return res.json()
+  const res = await client.getEntries({
+    content_type: "post",
+    "fields.slug": slug,
+  });
+  return res;
 }
 
 const Post = async ({ params }) => {
